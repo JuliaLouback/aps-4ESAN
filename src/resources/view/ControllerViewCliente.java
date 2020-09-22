@@ -102,16 +102,19 @@ public class ControllerViewCliente implements Initializable{
     	if(resultado.isPresent()) {
     		EscolhaAcao = choiceDialog.getSelectedItem().toString();
     		Painel.setVisible(false);
+    		limparCampos();
     		
     		if(EscolhaAcao.equals("Incluir")) {
     			
     			LabelChange.setText("Incluir Cliente");
+    			btnAdd.setText("Adicionar");
     			
         		Painel.setVisible(true);
         		
     		} else if(EscolhaAcao.equals("Alterar")) {
     			
     			LabelChange.setText("Alterar Cliente");
+    			btnAdd.setText("Editar");
     			
     			IdCliente = showTextInputDialog();
     		
@@ -122,6 +125,7 @@ public class ControllerViewCliente implements Initializable{
     		} else {
     			
     			LabelChange.setText("Excluir Cliente");
+    			btnAdd.setText("Excluir");
     			
     			IdCliente = showTextInputDialog();
     		
